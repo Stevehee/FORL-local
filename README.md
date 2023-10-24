@@ -2,7 +2,7 @@
 
 This repository contains a full-stack implementation of FOIL (First Order Inductive Learner).  
 
-Please access the application [here](https://forl-frontend-bf4076558d69.herokuapp.com).
+You could access the application [here](https://forl-frontend-bf4076558d69.herokuapp.com).
 
 ## Prerequisites
 
