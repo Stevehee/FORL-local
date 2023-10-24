@@ -5,12 +5,9 @@ This repository contains a Java implementation of the FOIL (First Order Inductiv
 ## Version
 
 java 17.0.9 
-
 node.js 18.12.1
-
 npm 8.19.2
-
-
+Apache Maven 3.9.4
 
 
 ## Files
