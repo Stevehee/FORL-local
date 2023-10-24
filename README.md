@@ -34,13 +34,12 @@ The core logic of FOIL is inside src/main/java/com/FOIL/services/logic directory
 
 ## Files
 
-- `Constants.java`: Contains constant attributes used in other classes.
 - `DataSet.java`: Handles data loading from files and data manipulation.
 - `Literal.java`: Represents a predicate with arguments.
 - `Predicate.java`: Base class for a predicate.
 - `Rule.java`: Represents a rule in the form of a head literal and a body of literals.
 - `Tuple.java`: Represents an instance of data as a list of literals.
-- `Main.java`: The main class that drives the FOIL algorithm.
+- `FOIL.java`: The main class that drives the FOIL algorithm.
 
 ## Usage
 
