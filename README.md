@@ -1,6 +1,6 @@
 # First Order Inductive Learner (FOIL)
 
-This repository contains an full-stack implementation of FOIL (First Order Inductive Learner).
+This repository contains a full-stack implementation of FOIL (First Order Inductive Learner).
 
 ## Prerequisites
 
