@@ -2,11 +2,16 @@
 
 This repository contains a Java implementation of the FOIL (First Order Inductive Learner) algorithm for rule-based machine learning.
 
-## Java version
+## Version
 
-java version "15.0.2" 2021-01-19  
-Java(TM) SE Runtime Environment (build 15.0.2+7-27)  
-Java HotSpot(TM) 64-Bit Server VM (build 15.0.2+7-27, mixed mode, sharing)
+java 17.0.9 
+
+node.js 18.12.1
+
+npm 8.19.2
+
+
+
 
 ## Files
 
