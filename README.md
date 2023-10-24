@@ -1,14 +1,36 @@
 # First Order Inductive Learner (FOIL)
 
-This repository contains a Java implementation of the FOIL (First Order Inductive Learner) algorithm for rule-based machine learning.
+This repository contains an full-stack implementation of FOIL (First Order Inductive Learner).
 
-## Version
+## Prerequisites
 
-java 17.0.9 
-node.js 18.12.1
-npm 8.19.2
-Apache Maven 3.9.4
+**Versions Used:**
+- **Java:** 17.0.9
+- **Node.js:** 18.12.1
+- **npm:** 8.19.2
+- **Apache Maven:** 3.9.4
 
+Ensure that you have the above versions of tools installed. If not, you can download them from their official websites:
+
+- [Java](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [Node.js & npm](https://nodejs.org/)
+- [Apache Maven](https://maven.apache.org/download.cgi)
+
+## Running the Application Locally
+
+   ```bash
+  git clone https://github.com/Stevehee/FORL-local.git
+  cd FORL-local
+  mvn spring-boot:run
+  cd src/main/frontend
+  npm install 
+  npm start 
+   ```
+
+Once both backend and frontend are running, access the application at http://localhost:3000.
+
+
+The core logic of FOIL is inside src/main/java/com/FOIL/services/logic directory:
 
 ## Files
 
@@ -22,20 +44,7 @@ Apache Maven 3.9.4
 
 ## Usage
 
-To run the FOIL algorithm, compile and run the `Main.java` class with the required arguments:
-
-- `args[0]` - The path to the data file.
-- `args[1]` - The name of the target predicate.
-- `args[2]` - The number of arguments of the target predicate.
-- `args[3-]` - The arguments of the target predicate. (could leave as empty).
-- `args[args.length - 1]` - The maximum number of literals wanted in the learned rules.
-
-For example:
-
-javac \*.java  
-java Main adult.data isGreater 1 3
-
-Result for example run :
+Result for an example run :
 
 Head: isGreater 1 ()  
 Body: Marital Status 2 (Married-civ-spouse), Education 2 (Bachelors), Occupation 2 (Exec-managerial), Workclass 2 (Private)
