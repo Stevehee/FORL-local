@@ -5,7 +5,9 @@ import java.util.*;
 class Rule {
   List<Literal> body;
   Literal head;
-  Double prob; 
+  Double prob;
+
+  String coverage;
 
   public Rule() {
     body = new ArrayList<>();
@@ -14,6 +16,15 @@ class Rule {
   public Rule(Rule original) {
     this.head = original.head;
     this.body = new ArrayList<>(original.body);
+  }
+
+
+  public String getCoverage() {
+    return coverage;
+  }
+
+  public void setCoverage(String coverage) {
+    this.coverage = coverage;
   }
 
   public void setHead(Literal head) {
@@ -77,6 +88,7 @@ class Rule {
     }
     sb.append(" --> ") ;
     sb.append(head.toString());
+    sb.append("\n"  +  this.coverage);
     return sb.toString();
   }
 

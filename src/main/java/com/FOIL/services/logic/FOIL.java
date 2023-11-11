@@ -55,7 +55,7 @@ public class FOIL {
 
   // Method to implement FOIL algorithm
   static Rule foil(List<Tuple> positiveData, List<Tuple> negativeData, Literal target,
-      Set<Literal> allPredicates, int ruleLength) {
+      Set<Literal> allPredicates, int ruleLength, int dataSize) {
     Rule rule = new Rule();
     rule.setHead(target);
 
@@ -84,13 +84,18 @@ public class FOIL {
     }
 
     // Remove positive examples covered by the rule
+    int coverage = 0 ;
     Iterator<Tuple> iterator = positiveData.iterator();
     while (iterator.hasNext()) {
+
       Tuple tuple = iterator.next();
       if (rule.coversExample(tuple)) {
+        coverage++ ;
         iterator.remove();
       }
     }
+
+    rule.setCoverage(coverage + "/" + dataSize);
 
     return rule;
   }
@@ -126,6 +131,8 @@ public class FOIL {
 
     List<Tuple> positiveData = data.loadPositiveData(target);
     List<Tuple> negativeData = data.loadNegativeData(target);
+    int dataSize = positiveData.size();
+
 
     int ruleLength = Integer.parseInt(args[args.length - 2]);
 
@@ -133,11 +140,20 @@ public class FOIL {
     int counter = 0;
     int numOfRules = Integer.parseInt(args[args.length-1]);
 
+    double time = 0 ;
+
     while (!positiveData.isEmpty()) {
       System.out.println("learning");
       Set<Literal> allPredicates = data.loadPredicates();
       allPredicates.remove(target);
-      Rule rule = foil(positiveData, negativeData, target, allPredicates, ruleLength);
+
+      long startTime = System.nanoTime();
+      Rule rule = foil(positiveData, negativeData, target, allPredicates, ruleLength, dataSize);
+      long endTime = System.nanoTime();
+
+      long timeTaken = endTime - startTime;
+
+      time += timeTaken / 1e9;
 
       String currRule = getProb(rule, data, target) + ": " + rule + "\n" ;
       System.out.println(currRule);
@@ -147,6 +163,9 @@ public class FOIL {
         break;
     }
 
-    return sb.toString();
+    String res = sb.toString() + "\n" + "Average Runtime: " + time/counter;
+    System.out.println(res);
+
+    return res;
   }
 }
